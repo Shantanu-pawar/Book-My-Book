@@ -25,14 +25,11 @@ public class Author {
 
 //    mapping author as [parent] - book[as child]
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-//    since we're taking oneTo many that's why we've to use list
-    private List<Book> booksWritten = new ArrayList<>();
+//    since we've to store the author who write all the books name that's why we're using list
 
-//    if it's one to one then we'll choose to write [private Book book;]
+    private List<Book> booksWritten = new ArrayList<>();  // if it's one to one then we'll choose to write [private Book book;]
 
-
-//    create constructor
-
+    
     public Author(int id, String name, int age, String city, String rating, List<Book> booksWritten) {
         this.id = id;
         this.name = name;

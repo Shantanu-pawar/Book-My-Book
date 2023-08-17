@@ -5,19 +5,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import shantanu.io.BookMyBook.ServiceLayer.StudentService;
-import shantanu.io.BookMyBook.models.Student;
-
+import shantanu.io.BookMyBook.ServiceLayer.BookService;
+import shantanu.io.BookMyBook.models.Book;
 
 @RestController
-@RequestMapping("/student")
-public class StudentController {
+@RequestMapping("/book")
+public class BookController {
 
     @Autowired
-    StudentService studentService;
+    BookService bookService;
 
     @PostMapping("/add")
-    public String addStudent(@RequestBody Student student){
-        return studentService.addStudent(student);
+    public String addBook(@RequestBody Book book){
+        return bookService.addBook(book);
     }
 }
