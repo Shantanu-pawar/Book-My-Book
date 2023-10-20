@@ -68,7 +68,6 @@ ___
 
 - `Add card `  <br>
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/a65338be-70f9-4cff-a307-a49765672c0b)
-<br>
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/056d7dfb-46cd-4417-93c4-ba59729e37d3)
 
 
