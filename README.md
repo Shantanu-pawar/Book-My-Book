@@ -49,33 +49,18 @@ ___
 # Author API's
 
 - `Add Author`
-
 <img src="https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/d53aa6e3-34d7-48b0-be8f-cb6ca990630f"
   alt="image" width="500"> <br>
 
-- Add Show
- ![image](https://user-images.githubusercontent.com/98727328/223327113-8baf2186-4db1-44bd-8b62-dc7cee182b55.png)
-
-
-- Add Movie
-
-
-
- ![image](https://user-images.githubusercontent.com/98727328/223327119-e59ed20f-27d3-4acf-8337-b176b1391e8c.png)
-
-- Add Theatre
-
-
-
- ![image](https://user-images.githubusercontent.com/98727328/223327125-4a68bf4d-99a6-4980-b23f-36f35070280a.png)
 
 
 # Book API's
 
-- `Add book`
+- `Add book` <br>
   ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/aaa29b01-8af2-4233-8aa2-d7240580d806)
   ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/b633a4e3-d5d3-4573-bee4-f73a5b4a1fc0)
 
 - `get books by it's Genre`
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/7d194b31-134f-495f-8790-417d623672e4)
 
 
