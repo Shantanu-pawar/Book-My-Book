@@ -2,8 +2,8 @@
 
 
 * Book my book is a system that holds the information of how many books issued by students in collage library.
-* Maintain track record of which author written how many books[with book names] and we have categories of all authors
-  ex[HISTORY, FICTION, ACTIONS, COMICS etc.] so that students can easily shortlist accordingly.
+* Maintain track record of which author written how many books **with book names** and we have categories of all authors
+  `ex : HISTORY, FICTION, ACTIONS, COMICS etc.` so that students can easily shortlist accordingly.
 * Its a backend code written using Spring-Boot
 * It consists of Different Layers like Controller, Service, Repository , DTO(Data Transfer Object)
 * These layers in the project increases its code maintanablity, understadability and readablity
