@@ -11,7 +11,6 @@
 ___
 # Functionality
 
-
 ## I. For Authors
  Authors can :-
 - Register himself/herself in the system.
@@ -24,7 +23,6 @@ ___
 - Student can add himself on portal as new student 
 - Issue the book
 - students have their specific departments so we can find student's department from their ID.
-
 
 
 # Different Models / Entities / (Table in MySQL) In the Project
@@ -46,13 +44,14 @@ ___
 
 <img src="https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/3de6a49a-ce8e-45f0-9eb8-abb991bd1a22" 
   alt="image" width="800">
-
+<br>
 
 # Author API's
 
-- Add User
- ![image](https://user-images.githubusercontent.com/98727328/223327105-8e999e60-3d65-4213-929c-46b076fab284.png)
+- `Add Author`
 
+<img src="https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/d53aa6e3-34d7-48b0-be8f-cb6ca990630f"
+  alt="image" width="500"> <br>
 
 - Add Show
  ![image](https://user-images.githubusercontent.com/98727328/223327113-8baf2186-4db1-44bd-8b62-dc7cee182b55.png)
