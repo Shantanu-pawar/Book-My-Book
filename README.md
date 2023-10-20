@@ -70,18 +70,12 @@ ___
  ![image](https://user-images.githubusercontent.com/98727328/223327125-4a68bf4d-99a6-4980-b23f-36f35070280a.png)
 
 
-# User API's
+# Book API's
 
-- Book Tickets
+- `Add book`
+  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/aaa29b01-8af2-4233-8aa2-d7240580d806)
+  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/b633a4e3-d5d3-4573-bee4-f73a5b4a1fc0)
 
-
-
-
-![image](https://user-images.githubusercontent.com/98727328/223647561-1b17960c-30d0-469f-a47a-c0275391c5db.png)
-
-- Cancel Tickets
+- `get books by it's Genre`
 
 
-
-
-![image](https://user-images.githubusercontent.com/98727328/223647671-f26e013b-e8f1-4e8d-9ef4-67771c1e9192.png)
