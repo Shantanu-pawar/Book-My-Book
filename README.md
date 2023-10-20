@@ -23,23 +23,18 @@
 ## II. For User(student):
 
 ## Students can :-
+- Student can add himself on portal as new student 
 - Issue the book
-- Can see the Show Seats
-- Can Book the Ticket for available seats
-- Can Cancel the Ticket 
-
+- students have their specific departments so we can find student's department from their ID.
 
 
 
 # Different Models / Entities / (Table in MySQL) In the Project
-- User Entity
-- Movie Entity
-- Theater Entity
-- Show Entity
-- Theates Seat Entity
-- Show Seat Entity
-- Ticket Entity
-
+- Author Entity
+- Student Entity
+- LibraryCard Entity
+- Book Entity
+- Transaction Entity
 
 
 # Teck-Stack Used :
@@ -53,37 +48,15 @@
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/3de6a49a-ce8e-45f0-9eb8-abb991bd1a22)
 
 
-
-
-
-
-
-# Booking Confirmation Email
-
-![image](https://user-images.githubusercontent.com/98727328/223663352-577e7994-acbb-4460-894f-55fcd16a1714.png)
-
-
-
-# Cancel Ticket's Confirmation Email
-
-![image](https://user-images.githubusercontent.com/98727328/223663519-28640472-e23f-4a85-a97d-f93aa0215bb3.png)
-
-
-
-# Admin API's
+# Author API's
 
 - Add User
-
-
-
  ![image](https://user-images.githubusercontent.com/98727328/223327105-8e999e60-3d65-4213-929c-46b076fab284.png)
 
+
 - Add Show
-
-
-
-
  ![image](https://user-images.githubusercontent.com/98727328/223327113-8baf2186-4db1-44bd-8b62-dc7cee182b55.png)
+
 
 - Add Movie
 
