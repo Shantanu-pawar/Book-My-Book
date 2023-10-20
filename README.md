@@ -48,9 +48,14 @@ ___
 
 # Author API's
 
-- `Add Author`
+- `Add Author` <br>
 <img src="https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/d53aa6e3-34d7-48b0-be8f-cb6ca990630f"
   alt="image" width="500"> <br>
+
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/6d403ead-5684-4d54-88cc-0b21fae3990d)
+
+- `Get author by it's id` <br>
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/d7a0d8c5-b5e4-4010-b519-ce4ea18656d7)
 
 
 
