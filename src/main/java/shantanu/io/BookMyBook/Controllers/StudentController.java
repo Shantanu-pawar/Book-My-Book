@@ -1,23 +1,45 @@
 package shantanu.io.BookMyBook.Controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import shantanu.io.BookMyBook.ENUMS.Department;
 import shantanu.io.BookMyBook.ServiceLayer.StudentService;
 import shantanu.io.BookMyBook.models.Student;
 
 
 @RestController
 @RequestMapping("/student")
+@Slf4j // adding logs here
+
 public class StudentController {
 
     @Autowired
-    StudentService studentService;
+    private StudentService studentService;
 
     @PostMapping("/add")
-    public String addStudent(@RequestBody Student student){
-        return studentService.addStudent(student);
+    public ResponseEntity<String> addStudent(@RequestBody Student student) {
+        try {
+            String response = studentService.addStudent(student);
+            return new ResponseEntity<>(response, HttpStatus.CREATED);
+        } catch (Exception e) {
+            log.error("Student not added successfully.{}", e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.EXPECTATION_FAILED);
+        }
     }
+
+    @GetMapping("/findDeptByID")
+    public ResponseEntity<String> findDeptById(@RequestParam("id") int Id){
+        try{
+            Department department = studentService.getDepartmentByID(Id);
+            return new ResponseEntity (department, HttpStatus.OK);
+        }
+        catch (Exception e){
+            log.error("Department not found invalid request.{}" , e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+
 }

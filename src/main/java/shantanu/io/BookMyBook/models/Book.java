@@ -1,47 +1,59 @@
 package shantanu.io.BookMyBook.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import shantanu.io.BookMyBook.ENUMS.booksGenre;
+import lombok.*;
+import shantanu.io.BookMyBook.ENUMS.Genre;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "book")
-
-@Getter
-@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int bookId;
 
-    private String name;
-    private int pages;
+    @Column(unique = true)
+    private String title;
+
+    private boolean isAvailable;
 
     @Enumerated(value = EnumType.STRING)
-    private booksGenre booksGenre;
+    private Genre genre;
 
-    private boolean issued;
+    private Date publicationDate;
 
-//    mapping author as [parent] - book[as child]
-    @ManyToOne // many books one author here
-    @JoinColumn
+    private int price;
+
+    public Book(String title, boolean isAvailable, Genre genre, Date publicationDate, int price) {
+        this.title = title;
+        this.isAvailable = isAvailable;
+        this.genre = genre;
+        this.publicationDate = publicationDate;
+        this.price = price;
+    }
+
+    // author as parent - book as child
+    @ManyToOne
+    @JoinColumn @JsonIgnore
     private Author author;
 
-//    mapping book[as child] - card [as parent]
-    @ManyToOne
-    @JoinColumn
-    private Card card;
+    // mapped by - book as parent - transaction as a child
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    private List<Transactions> transactionsList = new ArrayList<>();
 
-//   create constructor
+    public Boolean getIsAvailable() {
+        return isAvailable;
+    }
 
-    public Book(int id, String name, int pages, shantanu.io.BookMyBook.ENUMS.booksGenre booksGenre, boolean issued, Author author, Card card) {
-        this.id = id;
-        this.name = name;
-        this.pages = pages;
-        this.booksGenre = booksGenre;
-        this.issued = issued;
-        this.author = author;
-        this.card = card;
+    public void setIsAvailable(Boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 }

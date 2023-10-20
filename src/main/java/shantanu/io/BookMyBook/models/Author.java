@@ -1,41 +1,41 @@
 package shantanu.io.BookMyBook.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "author")
-
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int authorId;
 
     private String name;
+    private String emailId;
     private int age;
-    private String city;
-    private String rating;
+    private String penName;
 
-//    mapping author as [parent] - book[as child]
+    // author as parent - book as child
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-//    since we've to store the author who write all the books name that's why we're using list
+    @JsonIgnore
+    // creating list - because we've to store book's that written by one author which stored in this list
+    private List<Book> bookList = new ArrayList<>();
 
-    private List<Book> booksWritten = new ArrayList<>();  // if it's one to one then we'll choose to write [private Book book;]
 
-    
-    public Author(int id, String name, int age, String city, String rating, List<Book> booksWritten) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.city = city;
-        this.rating = rating;
-        this.booksWritten = booksWritten;
-    }
+    /*Note about :: @JsonIgnore
+     this annotation is basically ignores a specific method during serialisation and de-serialisation
+
+     serialisation : is the process of converting obj data from one format to another that can be easily
+     stored, reconstructed and transmitted. [ in this contest spring convert java obj into JSON format ]
+
+     de-serialisation : is the reverse process of serialisation */
+
 }

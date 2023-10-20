@@ -1,9 +1,12 @@
 package shantanu.io.BookMyBook.Repositories;
 
+import org.hibernate.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import shantanu.io.BookMyBook.models.Card;
+import shantanu.io.BookMyBook.models.Transactions;
 
 @Repository
-public interface CardRepository extends JpaRepository<Card, Integer> {
+public interface TransactionRepository extends JpaRepository<Transactions, Integer> {
+
+
 }

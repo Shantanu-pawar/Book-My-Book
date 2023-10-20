@@ -1,6 +1,6 @@
 package shantanu.io.BookMyBook.ENUMS;
 
-public enum booksGenre {
+public enum Genre {
     FICTIONAL,
     SCIENTIFIC,
     MOTIVATION,
