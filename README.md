@@ -13,20 +13,17 @@
 # Functionality
 
 
-## I. For  Admins :
- Admins can :-
- - Add a Movie.
-- Add a Theater.
-- Add Theater Seats
-- Create a Show for any Movie in any theater
-- Create Show Seats for booking purpose
+## I. For Authors
+ Authors can :-
+- Register himself/herself in the system.
+- Add a book.
+- Add new Genre type.
 
 
+## II. For User(student):
 
-## II. For Users :
-
-## Users can :-
-- Get the Show.
+## Students can :-
+- Issue the book
 - Can see the Show Seats
 - Can Book the Ticket for available seats
 - Can Cancel the Ticket 
