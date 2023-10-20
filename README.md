@@ -85,4 +85,10 @@ and after giving correct ID as param : <br>
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/a65338be-70f9-4cff-a307-a49765672c0b)
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/056d7dfb-46cd-4417-93c4-ba59729e37d3)
 
+- `Issue to student` <br> <br>
+
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/a2720e90-2bad-4243-9e19-146558ba994f)
+
+after updating the issue to student we actually linked our student with this card
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/5a1e8e9f-bbd4-427a-a2cc-1abc4b1e1f34)
 
