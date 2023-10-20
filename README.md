@@ -8,8 +8,7 @@
 * It consists of Different Layers like Controller, Service, Repository , DTO(Data Transfer Object)
 * These layers in the project increases its code maintanablity, understadability and readablity
 
-
-
+___
 # Functionality
 
 
@@ -21,8 +20,7 @@
 
 
 ## II. For User(student):
-
-## Students can :-
+  Students can :-
 - Student can add himself on portal as new student 
 - Issue the book
 - students have their specific departments so we can find student's department from their ID.
