@@ -70,14 +70,15 @@ ___
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/11608514-796b-42e6-b16a-1f22359210ed)
 
 - `Find department by Id`
-```
+
 here if i'm putting wrong id then it handle's corner case <br>
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/a771ccdd-c853-48c2-939f-e64ad64d4de6)
 
 and after giving correct ID as param : <br>
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/67c22034-3284-4d98-b1ff-200ee2815203)
 
-```
+
+
 # Card API's 
 
 - `Add card `  <br>
