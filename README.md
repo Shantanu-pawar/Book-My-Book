@@ -64,6 +64,12 @@ ___
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/7d194b31-134f-495f-8790-417d623672e4)
 
 
+# Student API's
+- `Add student` <br>
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/15f911ec-0126-4f56-b211-ff161d499a41)
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/11608514-796b-42e6-b16a-1f22359210ed)
+
+
 # Card API's 
 
 - `Add card `  <br>
