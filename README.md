@@ -62,7 +62,19 @@ ___
 - `Update author Name and PenName` <br> <br>
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/222e6de4-64be-4b08-b8a9-8eb906ac24e6)
 
+after updating 
+<br>
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/3e3732f6-af7b-40a2-8fec-b5693763dfb5)
 
+
+
+- `Delete Author by it's ID`
+  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/d6c651cd-f559-448a-b2ff-dd2fc07f62f5)
+
+  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/b75ebe85-241b-4b19-b560-b9cb3269d5e1)
+
+
+  
 
 # Book API's
 
