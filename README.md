@@ -69,10 +69,9 @@ ___
 
 
 - `Delete Author by it's ID` <br> <br>
-  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/d6c651cd-f559-448a-b2ff-dd2fc07f62f5)
-<br>
-<br>
-  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/b75ebe85-241b-4b19-b560-b9cb3269d5e1)
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/d6c651cd-f559-448a-b2ff-dd2fc07f62f5)
+
+![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/b75ebe85-241b-4b19-b560-b9cb3269d5e1)
 
   
 ___
@@ -109,7 +108,7 @@ ___
 ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/67c22034-3284-4d98-b1ff-200ee2815203)
 
 
-
+___
 # Card API's 
 
 - `Add card `  <br><br>
