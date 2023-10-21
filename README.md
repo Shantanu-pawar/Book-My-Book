@@ -1,10 +1,7 @@
 # Book-My-Book
 
 <p>
-  <a href="https://github.com/Shantanu-pawar/Book-My-Book">  
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP2MsAfQAdOz7kBaXIqVysnCHlgHYgA5ig1g&usqp=CAU"
-      alt="Click Here" width="35">
-  </a> 
+  <a href="https://github.com/Shantanu-pawar/Book-My-Book"> Visit to code  </a> 
 </p>
 
 
