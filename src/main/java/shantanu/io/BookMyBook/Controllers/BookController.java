@@ -23,20 +23,21 @@ public class BookController {
 
     @PostMapping("/add")
     // when i'll adding the book so i've to  associate the author directly with that book
-    public ResponseEntity<String> addBook(AddBookRequestDto request){
+    public ResponseEntity<String> addBook(@RequestBody AddBookRequestDto addBookRequestDto){
 
         try{
-            String result = bookService.addBook(request);
-            return new ResponseEntity<>(result, HttpStatus.CREATED);
-        }
-        catch (Exception e){
-            log.error("error occurred, can't able to Add your book{}", e.getMessage());
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+            String result = bookService.addBook(addBookRequestDto);
+            return new ResponseEntity(result, HttpStatus.OK);
+
+        }catch (Exception e){
+            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
     }
 
+
     @GetMapping("/getByGenre")
     public ResponseEntity<String> getBookListByGenre(@RequestParam("genre") Genre genre){
+
         List<BookResponseDto> responseDtoList = bookService.getBookListByGenre(genre);
         return new ResponseEntity(responseDtoList, HttpStatus.OK);
     }

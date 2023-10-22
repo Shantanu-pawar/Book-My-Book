@@ -13,23 +13,27 @@ import shantanu.io.BookMyBook.models.LibraryCard;
 @Slf4j
 public class CardController {
 
-    @Autowired private LibraryCardService libraryCardService;
+    @Autowired
+    private LibraryCardService libraryCardService;
 
     @PostMapping("/add")
-    public String addCard(@RequestBody LibraryCard libraryCard){
+    public String addCard(@RequestBody LibraryCard libraryCard) {
         return libraryCardService.addCard(libraryCard);
     }
 
-    @PutMapping("issueToStudent")
-    public ResponseEntity issueToStudent(@RequestParam("cardId")int cardId,@RequestParam("rollNO") int rollNo){
 
-        try{
+    @PutMapping("/issueToStudent")
+    public ResponseEntity issueToStudent(@RequestParam("cardId") Integer cardId,
+                                         @RequestParam("rollNo") Integer rollNo) {
+
+        try {
             String result = libraryCardService.associateToStudent(cardId, rollNo);
             return new ResponseEntity(result, HttpStatus.OK);
         }
-        catch (Exception e ){
-            log.error("Error is associating with card and student.{}", e.getMessage());
+        catch (Exception e) {
+            log.error("Error in associating card to student{}", e.getMessage());
             return new ResponseEntity(e.getMessage(), HttpStatus.EXPECTATION_FAILED);
         }
     }
+
 }

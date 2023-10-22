@@ -10,15 +10,18 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+
 public class AddBookRequestDto {
 
     private String title;
-    private boolean isAvailable;
+
+    // Boolean is an obj wrapper
+    private Boolean isAvailable;
     private Genre genre;
     private Date publicationDate;
-    private int price;
+    private Integer price;
 
     // we can also send author id as DTO
-    private int authorId;
+    private Integer authorId;
+
 }

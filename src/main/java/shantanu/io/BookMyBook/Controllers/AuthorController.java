@@ -50,8 +50,8 @@ public class AuthorController {
         return authorService.getAuthorById(authorId);
     }
 
-    @DeleteMapping("/id")
-    public ResponseEntity<String> deleteAuthor(@PathVariable int authorId){
+    @DeleteMapping("/deleteAuthor")
+    public ResponseEntity<String> deleteAuthor(@RequestParam("id") int authorId){
 
         boolean isDeleted = authorService.deleteAuthorById(authorId);
         if(isDeleted){
