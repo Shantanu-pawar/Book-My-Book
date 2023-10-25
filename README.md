@@ -29,7 +29,11 @@ Students can :-
 - Student can add himself on portal as new student.
 - Student can fetch books of perticular Type of Genre.
 - Issue the books.
-- students have their specific departments so we can find student's department from their ID.
+- Students have their specific departments so we can find student's department from their ID.
+
+## III. For Card :-
+- Admin can add new card
+- Card can be linked with the student using issueToStudent so that we can track the card info such as `if it's fine, cardBlock etc.`
 
 
 # Different Models / Entities / (Table in MySQL) In the Project
