@@ -20,14 +20,15 @@ ___
 ## I. For Authors
 Authors can :-
 - Register himself/herself in the system.
-- Add a book.
-- Add new Genre type.
+- Get list of books from perticular author : author can Add a book and linked it with author id, so that we can get a list of books that author had written.
+- Admin can delete | update the author.
 
 
 ## II. For User(student):
 Students can :-
-- Student can add himself on portal as new student
-- Issue the book
+- Student can add himself on portal as new student.
+- Student can fetch books of perticular Type of Genre.
+- Issue the books.
 - students have their specific departments so we can find student's department from their ID.
 
 
