@@ -21,7 +21,7 @@ ___
 Authors can :-
 - Register himself/herself in the system.
 - Get list of books from perticular author : author can Add a book and linked it with author id, so that we can get a list of books that author had written.
-- Admin can delete | update the author.
+- Admin can delete/update the author.
 
 
 ## II. For User(student):
