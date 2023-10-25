@@ -24,7 +24,6 @@ public class BookController {
     @PostMapping("/add")
     // when i'll adding the book so i've to  associate the author directly with that book
     public ResponseEntity<String> addBook(@RequestBody AddBookRequestDto addBookRequestDto){
-
         try{
             String result = bookService.addBook(addBookRequestDto);
             return new ResponseEntity(result, HttpStatus.OK);
@@ -41,4 +40,6 @@ public class BookController {
         List<BookResponseDto> responseDtoList = bookService.getBookListByGenre(genre);
         return new ResponseEntity(responseDtoList, HttpStatus.OK);
     }
+
+
 }

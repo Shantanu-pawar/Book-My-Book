@@ -24,21 +24,23 @@ public class BookService {
 
 
     public String addBook(AddBookRequestDto request) throws Exception{
-            // Validation : check author id should be valid at firstly.
+            // Validation : check for authorId
             Optional<Author> optionalAuthor = authorRepository.findById(request.getAuthorId());
 
             if(!optionalAuthor.isPresent()){
-                throw new Exception("Author id is incorrect");
+                throw new Exception("Author id is not present in Database.");
             }
+
             Author author = optionalAuthor.get();
 
-            //create obj here and now set it's all attributes to this book ojb and save to repo
+            //set attributes in book obj
             Book book = new Book(request.getTitle(), request.getIsAvailable(), request.getGenre(),
                     request.getPublicationDate(), request.getPrice());
 
             // now i've got book obj and just 've to set foreign key variables
             // and since it's bi-directional mapping so need to set both parent and child
             book.setAuthor(author); // setting in child
+
 
 //          setting in parent : 3 step process : 1.getting list of books || 2. add it || 3. set it back
             List<Book> list = author.getBookList();
@@ -59,9 +61,8 @@ public class BookService {
         for(Book book : bookList){
 
             BookResponseDto bookResponseDto = new BookResponseDto(book.getTitle(),
-                    book.getIsAvailable(), book.getGenre(),
-                    book.getPublicationDate(),book.getPrice(),
-                    book.getAuthor().getName());
+                    book.getIsAvailable(), book.getGenre(),book.getPublicationDate(),
+                    book.getPrice(),book.getAuthor().getName());
 
             responseList.add(bookResponseDto);
         }
