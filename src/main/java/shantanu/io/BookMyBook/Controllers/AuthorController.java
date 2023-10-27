@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import shantanu.io.BookMyBook.RequestDTO.UpdateNameAndPenNameRequest;
 import shantanu.io.BookMyBook.ServiceLayer.AuthorService;
 import shantanu.io.BookMyBook.models.Author;
+import shantanu.io.BookMyBook.models.Book;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -54,10 +56,15 @@ public class AuthorController {
     public ResponseEntity<String> deleteAuthor(@PathVariable("id") int authorId){
 
         boolean isDeleted = authorService.deleteAuthorById(authorId);
-        if(isDeleted){
+        if(isDeleted)
             return new ResponseEntity<>("Author deleted successfully", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("Author not found", HttpStatus.NOT_FOUND);
-        }
+
+        else return new ResponseEntity<>("Author not found", HttpStatus.NOT_FOUND);
+    }
+
+
+    @GetMapping("/getBookListUsingAuthorId")
+    public List<Book> getBookListUsingAuthorId(@RequestParam int authorId){
+        return authorService.getBookListUsingAuthorId(authorId);
     }
 }

@@ -23,7 +23,8 @@ public class Book {
     @Column(unique = true)
     private String title;
 
-    private boolean isAvailable;
+//    checking is available or not
+    private String isAvailable;
 
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
@@ -32,7 +33,7 @@ public class Book {
 
     private int price;
 
-    public Book(String title, boolean isAvailable, Genre genre, Date publicationDate, int price) {
+    public Book(String title, String isAvailable, Genre genre, Date publicationDate, int price) {
         this.title = title;
         this.isAvailable = isAvailable;
         this.genre = genre;
@@ -49,11 +50,11 @@ public class Book {
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<Transactions> transactionsList = new ArrayList<>();
 
-    public Boolean getIsAvailable() {
+    public String getIsAvailable() {
         return isAvailable;
     }
 
-    public void setIsAvailable(Boolean isAvailable) {
+    public void setIsAvailable(String isAvailable) {
         this.isAvailable = isAvailable;
     }
 }

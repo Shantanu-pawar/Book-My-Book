@@ -33,10 +33,8 @@ public class BookController {
         }
     }
 
-
     @GetMapping("/getByGenre")
     public ResponseEntity<String> getBookListByGenre(@RequestParam("genre") Genre genre){
-
         List<BookResponseDto> responseDtoList = bookService.getBookListByGenre(genre);
         return new ResponseEntity(responseDtoList, HttpStatus.OK);
     }

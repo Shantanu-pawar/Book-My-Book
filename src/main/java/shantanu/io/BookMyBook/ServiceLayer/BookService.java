@@ -26,12 +26,9 @@ public class BookService {
     public String addBook(AddBookRequestDto request) throws Exception{
             // Validation : check for authorId
             Optional<Author> optionalAuthor = authorRepository.findById(request.getAuthorId());
-
             if(!optionalAuthor.isPresent()){
                 throw new Exception("Author id is not present in Database.");
             }
-
-            Author author = optionalAuthor.get();
 
             //set attributes in book obj
             Book book = new Book(request.getTitle(), request.getIsAvailable(), request.getGenre(),
@@ -39,8 +36,8 @@ public class BookService {
 
             // now i've got book obj and just 've to set foreign key variables
             // and since it's bi-directional mapping so need to set both parent and child
+            Author author = optionalAuthor.get();
             book.setAuthor(author); // setting in child
-
 
 //          setting in parent : 3 step process : 1.getting list of books || 2. add it || 3. set it back
             List<Book> list = author.getBookList();

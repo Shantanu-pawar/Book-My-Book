@@ -16,7 +16,7 @@ public class AddBookRequestDto {
     private String title;
 
     // Boolean is an obj wrapper
-    private Boolean isAvailable;
+    private String isAvailable;
     private Genre genre;
     private Date publicationDate;
     private Integer price;

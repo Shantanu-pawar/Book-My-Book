@@ -13,7 +13,7 @@ public class BookResponseDto {
 
     private String title;
 
-    private Boolean isAvailable;
+    private String isAvailable;
 
     private Genre genre;
 
