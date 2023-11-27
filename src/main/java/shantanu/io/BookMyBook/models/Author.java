@@ -29,7 +29,6 @@ public class Author {
     // creating list - because we've to store book's that written by one author which stored in this list
     private List<Book> bookList = new ArrayList<>();
 
-
     /*Note about :: @JsonIgnore
      this annotation is basically ignores a specific method during serialisation and de-serialisation
 
