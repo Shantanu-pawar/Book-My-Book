@@ -2,13 +2,16 @@ package shantanu.io.BookMyBook.ServiceLayer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import shantanu.io.BookMyBook.Converters.AuthorConverter;
 import shantanu.io.BookMyBook.Repositories.AuthorRepository;
 import shantanu.io.BookMyBook.Repositories.BookRepository;
+import shantanu.io.BookMyBook.RequestDTO.UpdateEmailAndAuthorDto;
 import shantanu.io.BookMyBook.RequestDTO.UpdateNameAndPenNameRequest;
+import shantanu.io.BookMyBook.ResponceDTO.AuthorResponseDto;
 import shantanu.io.BookMyBook.models.Author;
 import shantanu.io.BookMyBook.models.Book;
 
-import java.util.ArrayList;
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +26,7 @@ public class AuthorService {
     public String addAuthor(Author author) throws Exception {
         // we've to put validations here
         if (authorRepository.existsById(author.getAuthorId())) {
-            throw new Exception("author id should not be send as a parameter");
+            throw new Exception("author id already Exists");
         }
 
         authorRepository.save(author);
@@ -34,10 +37,10 @@ public class AuthorService {
         // now check validations here
         Optional<Author> authorOptional = authorRepository.findById(request.getAuthorId());
         if (!authorOptional.isPresent()) {
-            throw new Exception("AuthorId is Invalid");
+            throw new Exception("INVALID : author id");
         }
 
-        // here get a author obj and then we set reqd parameters to update info then save in repo.
+        // here getting an author obj from optionals.then set required parameters to update info then save in repo.
         Author author = authorOptional.get();
         author.setName(request.getNewName());
         author.setPenName(request.getNewPenName());
@@ -46,11 +49,23 @@ public class AuthorService {
         return "Author Name and PenName has been updated";
     }
 
+//    shortcut of using converter function
+//    Author author = AuthorConverter.convertAuthorDtoToEntity(update);
+
     public Author getAuthorById(int authorId){
-        Author author = authorRepository.findById(authorId).get();
-        return author;
+        return authorRepository.findById(authorId).get();
     }
 
+    // if we want the custom responses of author : as just want age and authId.
+    public AuthorResponseDto getAuthor(int authorId){
+        Author author = authorRepository.findById(authorId).get();
+
+        AuthorResponseDto authorResponseDto = new AuthorResponseDto();
+        authorResponseDto.setAuthorId(author.getAuthorId());
+        authorResponseDto.setAge(author.getAge());
+
+        return authorResponseDto;
+    }
 
     public boolean deleteAuthorById(int authorId){
         Optional<Author> authorOptional = authorRepository.findById(authorId);
@@ -62,17 +77,15 @@ public class AuthorService {
         else return false;
     }
 
-    public List<Book> getBookListUsingAuthorId(int authorId){
+    public List<Book> getBookListUsingAuthorId(int authorId) throws Exception{
+
+        // validation check for author id
+        Optional<Author> optionalAuthor = authorRepository.findById(authorId);
+        if(!optionalAuthor.isPresent()){
+            throw new Exception("Author ID is not present in DB ");
+        }
+
         List<Book> bookList = authorRepository.findById(authorId).get().getBookList();
         return bookList;
-
-//        List<Book> books = bookRepository.findAll();
-//        List<Book> list = new ArrayList<>();
-//        for(Book book : bookList){
-//            if(book.getAuthor().getAuthorId() == authorId){
-//                list.add(book);
-//            }
-//        }
-//        return bookList;
     }
 }

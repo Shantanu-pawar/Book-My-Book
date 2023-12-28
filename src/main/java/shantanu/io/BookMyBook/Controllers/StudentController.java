@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import shantanu.io.BookMyBook.ENUMS.Department;
+import shantanu.io.BookMyBook.RequestDTO.AddStudentWithCardRequest;
 import shantanu.io.BookMyBook.ServiceLayer.StudentService;
 import shantanu.io.BookMyBook.models.Student;
 
@@ -20,7 +21,7 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping("/add")
-    public ResponseEntity<String> addStudent(@RequestBody Student student) {
+    public ResponseEntity<String> addStudent(@RequestBody AddStudentWithCardRequest student) {
         try {
             String response = studentService.addStudent(student);
             return new ResponseEntity<>(response, HttpStatus.CREATED);

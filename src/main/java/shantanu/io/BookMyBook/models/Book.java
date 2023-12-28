@@ -43,7 +43,8 @@ public class Book {
 
     // author as parent - book as child
     @ManyToOne
-    @JoinColumn @JsonIgnore
+    @JoinColumn
+    @JsonIgnore
     private Author author;
 
     // mapped by - book as parent - transaction as a child

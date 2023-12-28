@@ -21,6 +21,8 @@ public class BookResponseDto {
 
     private Integer price;
 
+    private Integer authorId;
+
     private String authorName;
 
 }

@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "author")
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Author {

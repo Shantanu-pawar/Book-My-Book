@@ -22,32 +22,32 @@ public class BookService {
     @Autowired
     BookRepository bookRepository;
 
-
     public String addBook(AddBookRequestDto request) throws Exception{
-            // Validation : check for authorId
-            Optional<Author> optionalAuthor = authorRepository.findById(request.getAuthorId());
-            if(!optionalAuthor.isPresent()){
-                throw new Exception("Author id is not present in Database.");
-            }
 
-            //set attributes in book obj
-            Book book = new Book(request.getTitle(), request.getIsAvailable(), request.getGenre(),
-                    request.getPublicationDate(), request.getPrice());
+        // Validation : check for authorId
+        Optional<Author> optionalAuthor = authorRepository.findById(request.getAuthorId());
+        if(!optionalAuthor.isPresent()){
+            throw new Exception("Author id is not present in Database.");
+        }
 
-            // now i've got book obj and just 've to set foreign key variables
-            // and since it's bi-directional mapping so need to set both parent and child
-            Author author = optionalAuthor.get();
-            book.setAuthor(author); // setting in child
+        //set attributes in book obj
+        Book book = new Book(request.getTitle(), request.getIsAvailable(), request.getGenre(),
+                request.getPublicationDate(), request.getPrice());
+
+        // now i've got book obj and just 've to set foreign key variables
+        // and since it's bi-directional mapping so need to set both parent and child
+        Author author = optionalAuthor.get();
+        book.setAuthor(author); // setting in child
 
 //          setting in parent : 3 step process : 1.getting list of books || 2. add it || 3. set it back
-            List<Book> list = author.getBookList();
-            list.add(book);
-            author.setBookList(list);
+        List<Book> list = author.getBookList();
+        list.add(book);
+        author.setBookList(list);
 
-            // lastly we've to just save our parent child will automatically saved in our DB
-            authorRepository.save(author);
-            return "book has been successfully added";
-        }
+        // lastly we've to just save our parent child will automatically saved in our DB
+        authorRepository.save(author);
+        return "book has been successfully added";
+    }
 
 
     public List<BookResponseDto> getBookListByGenre(Genre genre){
@@ -59,7 +59,7 @@ public class BookService {
 
             BookResponseDto bookResponseDto = new BookResponseDto(book.getTitle(),
                     book.getIsAvailable(), book.getGenre(),book.getPublicationDate(),
-                    book.getPrice(),book.getAuthor().getName());
+                    book.getPrice(), book.getAuthor().getAuthorId(),book.getAuthor().getName());
 
             responseList.add(bookResponseDto);
         }

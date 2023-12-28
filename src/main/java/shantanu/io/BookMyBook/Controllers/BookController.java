@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import shantanu.io.BookMyBook.ENUMS.Genre;
 import shantanu.io.BookMyBook.RequestDTO.AddBookRequestDto;
-import shantanu.io.BookMyBook.ResponceDTO.AddBookResponseDTO;
 import shantanu.io.BookMyBook.ResponceDTO.BookResponseDto;
 import shantanu.io.BookMyBook.ServiceLayer.BookService;
 
@@ -26,17 +25,22 @@ public class BookController {
     public ResponseEntity<String> addBook(@RequestBody AddBookRequestDto addBookRequestDto){
         try{
             String result = bookService.addBook(addBookRequestDto);
-            return new ResponseEntity(result, HttpStatus.OK);
+            return new ResponseEntity<>(result, HttpStatus.OK);
 
         }catch (Exception e){
-            return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
     }
 
     @GetMapping("/getByGenre")
     public ResponseEntity<String> getBookListByGenre(@RequestParam("genre") Genre genre){
-        List<BookResponseDto> responseDtoList = bookService.getBookListByGenre(genre);
-        return new ResponseEntity(responseDtoList, HttpStatus.OK);
+        try{
+            List<BookResponseDto> responseDtoList = bookService.getBookListByGenre(genre);
+            return new ResponseEntity(responseDtoList, HttpStatus.OK);
+        }
+        catch (Exception e){
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 
 
