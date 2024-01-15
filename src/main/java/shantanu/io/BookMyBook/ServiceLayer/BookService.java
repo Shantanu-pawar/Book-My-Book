@@ -35,17 +35,21 @@ public class BookService {
                 request.getPublicationDate(), request.getPrice());
 
         // now i've got book obj and just 've to set foreign key variables
-        // and since it's bi-directional mapping so need to set both parent and child
+        // and since its 'bi directional' mapping so need to set both parent and child
         Author author = optionalAuthor.get();
         book.setAuthor(author); // setting in child
 
-//          setting in parent : 3 step process : 1.getting list of books || 2. add it || 3. set it back
+        // setting in parent : 3-step process : 1.getting list of books || 2. add it || 3. set it back
+
+        // author.getBookList().add(book); // shortcut method.
+
         List<Book> list = author.getBookList();
         list.add(book);
         author.setBookList(list);
 
         // lastly we've to just save our parent child will automatically saved in our DB
         authorRepository.save(author);
+        bookRepository.save(book);
         return "book has been successfully added";
     }
 
