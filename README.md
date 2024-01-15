@@ -82,6 +82,9 @@ Students can :-
 - `Delete Author by it's ID` <br> <br>
   ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/d6c651cd-f559-448a-b2ff-dd2fc07f62f5)
 
+- `Get Book list using author Id` <br> <br>
+  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/53247cc8-8922-465c-aab5-6644dd9467a4)
+
 ___
 
 # Book API's
@@ -97,6 +100,7 @@ ___
   ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/7d194b31-134f-495f-8790-417d623672e4)
 
 ___
+
 # Student API's
 - `Add student` <br> <br>
   ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/15f911ec-0126-4f56-b211-ff161d499a41)
@@ -114,9 +118,8 @@ ___
 - and after putting correct studentID as param :
   <br> <br>
   ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/67c22034-3284-4d98-b1ff-200ee2815203)
-
-
 ___
+
 # Card API's
 
 - `Add card `  <br><br>
@@ -131,4 +134,16 @@ ___
 - after updating the card linking with issue to student
   <br><br>
   ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/5a1e8e9f-bbd4-427a-a2cc-1abc4b1e1f34)
+
+___
+
+# Transactions API's
+
+- `Post transactions ` <br><br>
+  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/5cc65f72-7933-48f6-801c-3356b7cd7103)
+
+  ![image](https://github.com/Shantanu-pawar/Book-My-Book/assets/87530022/1cf35da7-f357-4c1b-a107-805f4ee9d1d4)
+
+
+  
 
