@@ -8,5 +8,4 @@ import shantanu.io.BookMyBook.models.Transactions;
 @Repository
 public interface TransactionRepository extends JpaRepository<Transactions, Integer> {
 
-
 }

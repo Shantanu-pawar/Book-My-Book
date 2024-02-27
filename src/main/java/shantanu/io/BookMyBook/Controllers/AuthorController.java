@@ -55,16 +55,14 @@ public class AuthorController {
     }
 
     @GetMapping("/getAuthorWithCustomParams/{id}")
-    public ResponseEntity<String> getAuthorCustomResponse (@PathVariable("id") int authorId){
+    public ResponseEntity<?> getAuthorCustomResponse (@PathVariable("id") int authorId){
         try{
             AuthorResponseDto author = authorService.getAuthor(authorId);
-            return new ResponseEntity(author, HttpStatus.OK);
+            return new ResponseEntity<>(author, HttpStatus.OK);
         }
         catch (Exception e){
-            log.error("author not found", e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
-
     }
 
     @DeleteMapping("/deleteAuthor/{id}")

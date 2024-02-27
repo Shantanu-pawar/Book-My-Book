@@ -78,13 +78,11 @@ public class AuthorService {
     }
 
     public List<Book> getBookListUsingAuthorId(int authorId) throws Exception{
-
         // validation check for author id
         Optional<Author> optionalAuthor = authorRepository.findById(authorId);
         if(!optionalAuthor.isPresent()){
             throw new Exception("Author ID is not present in DB ");
         }
-
         List<Book> bookList = authorRepository.findById(authorId).get().getBookList();
         return bookList;
     }

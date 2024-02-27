@@ -32,10 +32,10 @@ public class StudentController {
     }
 
     @GetMapping("/findDeptByID")
-    public ResponseEntity<String> findDeptById(@RequestParam("id") int Id){
+    public ResponseEntity<?> findDeptById(@RequestParam("id") int Id){
         try{
             Department department = studentService.getDepartmentByID(Id);
-            return new ResponseEntity (department, HttpStatus.OK);
+            return new ResponseEntity<>(department, HttpStatus.OK);
         }
         catch (Exception e){
             log.error("Department not found invalid request.{}" , e.getMessage());

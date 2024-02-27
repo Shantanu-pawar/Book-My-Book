@@ -27,10 +27,6 @@ public class LibraryCardService {
         if(!studentRepository.existsById(card.getStudentRollNo()))throw new Exception("Student Id is Invalid");
         if(!libraryCardRepository.existsById(card.getCardNo())) throw new Exception("Card No is Invalid");
 
-    /* Note to remember for this API
-    if we want to complete this API, we've update those FK variables [so for that we've to get student Entity]
-    this concept explains here very well : https://vimeo.com/853810094/a61902b349 @2:5:00 Time */
-
         Optional<Student> optional = studentRepository.findById(card.getStudentRollNo());
         Student studentObj = optional.get();
 
